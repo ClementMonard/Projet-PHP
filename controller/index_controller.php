@@ -9,7 +9,7 @@ if (file_exists('source.xml')) {
     exit('Echec');
 }
 
-//Contrôle que la variable page existe
+//Contrôle que la variable page qui contient l'id page existe
 if (isset($_GET['page'])){
     //Retourne la valeur numérique entière équivalente d'une variable avec la fonction intval avec une sécurité supplémentaire en utilisant la fonction htmlspecialchars
     $page = intval(htmlspecialchars($_GET['page']));
