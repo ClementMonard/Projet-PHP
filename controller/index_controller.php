@@ -19,5 +19,5 @@ if (isset($_GET['page'])){
 
 //Création d'une variable $title qui aura comme contenu la valeur page et le titre de la page xml
  $title = $xml->page[$page]->title;
- 
+ $test = $xml->page;
 ?>
