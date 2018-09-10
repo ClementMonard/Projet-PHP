@@ -10,6 +10,17 @@ include 'controller/index_controller.php';
         <title><?= $title ?></title>
     </head>
     <body>
+        <div class="navbar-fixed">
+            <nav>
+                <div>
+                    <ul>
+                        <?php for ($i = 0; $i < count($test); $i++) { ?>
+                            <li><a href="?page=<?= $i; ?>"><?= $xml->page[$i]->menu ?></a></li>
+                        <?php } ?>
+                    </ul>                
+                </div>
+            </nav>
+        </div>
         <?= $xml->page[$page]->content; ?>
     </body>
 </html>
