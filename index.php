@@ -1,19 +1,19 @@
-<?php
-include 'controller/index_controller.php';
-?>
+<?php include 'controller/index_controller.php'; ?>
+<?php include 'controller/controllerForm.php'; ?>
 <!DOCTYPE html>
 <html lang="fr" dir="ltr">
     <head>
         <meta charset = "utf-8" />
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" crossorigin="anonymous">  
-        <link rel="stylesheet" href="style.css" />
+        <link rel="stylesheet" href="assets/css/style.css" />
+        <link href="https://fonts.googleapis.com/css?family=Alegreya+SC|Libre+Baskerville|Playfair+Display" rel="stylesheet">         
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" crossorigin="anonymous">
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" crossorigin="anonymous"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js" crossorigin="anonymous"></script>
         <title><?= $title ?></title>
     </head>
-    <body>
-        <nav id="color" class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <body class="font">
+        <nav id="color" class="navbar navbar-expand-lg navbar-dark ">
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -26,6 +26,16 @@ include 'controller/index_controller.php';
                 </ul>
             </div>
         </nav>
-        <?= $xml->page[$page]->content; ?>
+        <!--affiche les resultat si aucune érreur est compté dans le tableau-->
+        <?php if (isset($_POST['submit']) && (count($formError) === 0)) { ?>
+            <p><?= $lastName ?></p>
+            <p><?= $mail ?></p>
+            <p><?= $phone ?></p>
+            <p><?= $subject ?></p>
+            <p><?= $city ?></p>
+            <p><?= $message ?></p>
+        <?php } else { ?>
+            <?= $xml->page[$page]->content; ?>
+        <?php } ?>
     </body>
 </html>
