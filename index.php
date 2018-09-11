@@ -6,7 +6,7 @@
         <meta charset = "utf-8" />
         <link rel="stylesheet" href="assets/css/style.css" />
         <link href="https://fonts.googleapis.com/css?family=Alegreya+SC|Libre+Baskerville|Playfair+Display" rel="stylesheet">         
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" crossorigin="anonymous">        
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" crossorigin="anonymous">
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" crossorigin="anonymous"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js" crossorigin="anonymous"></script>
@@ -20,8 +20,8 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item active">
-                        <?php for ($i = 0; $i < count($test); $i++) { ?></li>
-                        <li><a href="?page=<?= $i; ?>"><?= $xml->page[$i]->menu ?></a></li>
+                        <?php for ($countPages = 0; $countPages < count($displayPages); $countPages++) { ?></li>
+                        <li><a href="/page-<?= $countPages; ?>.html"><?= $xml->page[$countPages]->menu ?></a></li>
                         <li><?php } ?></li>
                 </ul>
             </div>

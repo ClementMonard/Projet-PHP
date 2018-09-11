@@ -1,5 +1,4 @@
 <?php
-
 //Si le fichier existe
 if (file_exists('source.xml')) {
     //Alors tu charges la page
@@ -18,6 +17,6 @@ if (isset($_GET['page'])){
 }
 
 //Création d'une variable $title qui aura comme contenu la valeur page et le titre de la page xml
- $title = $xml->page[$page]->title;
- $test = $xml->page;
+ $title = $xml->page[$page]->title; 
+ $displayPages = $xml->page;
 ?>
