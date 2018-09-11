@@ -26,6 +26,7 @@
                 </ul>
             </div>
         </nav>
+        <div class="container-fluid">
         <!--affiche les resultat si aucune érreur est compté dans le tableau-->
         <?php if (isset($_POST['submit']) && (count($formError) === 0)) { ?>
             <p><?= $lastName ?></p>
@@ -37,5 +38,6 @@
         <?php } else { ?>
             <?= $xml->page[$page]->content; ?>
         <?php } ?>
+            </div>
     </body>
 </html>
