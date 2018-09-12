@@ -29,11 +29,14 @@
         <?= $xml->page[$page]->content; ?>
         <!--affiche les resultat si aucune érreur est compté dans le tableau-->
         <?php 
+        //Si on appui sur le bouton Envoyer et que la comptabilisation du nombre d'erreurs dans le tableau est égal à 0 
             if (isset($_POST['send']) && count($formError) == 0) {
+                //Affiche un message de succés en dessous du formulaire
                 ?>
                 <p class="text-success"><?= 'Le message a bien été envoyé !' ?></p>
                 <?php
             } else {
+                //Sinon affichage du tableau d'error grâce au foreach
                 foreach ($formError as $error) {
                     ?>
                     <p class="text-danger"><?= $error ?></p>

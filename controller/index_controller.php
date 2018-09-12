@@ -17,9 +17,12 @@ if (isset($_GET['page'])) {
 } else {
     $page = 0;
 }
+
 if (isset($_POST['send'])) {
+    //Si la comptabilisation du tableau est égal à 0
     if (count($formError) == 0) {
-        mail($mail, $subject, $message, 'From : bidule');
+        //Alors un mail sera envoyé avec le sujet et le message
+        mail($mail, $subject, $message, 'From : The groupe');
     }
 }
 
