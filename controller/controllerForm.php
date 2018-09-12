@@ -9,6 +9,7 @@ $regexText = '/^[0-9a-zA-Zàáâãäåçèéêëìíîïðòóôõöùúûüýÿ
 //déclaration d'un tableau d'érreur
 $formError = array();
 //Si LastName existe , la passer au test regex , si elle passe la stocker dans $lastName sinon c'est vide
+
 if (isset($_POST['your-name'])) {
     //déclarion de la variable lastname avec le htmlspecialchar qui change l'interprétation des balises par le code
     $lastName = htmlspecialchars($_POST['your-name']);
@@ -20,7 +21,7 @@ if (isset($_POST['your-name'])) {
     // verifie si le champs de nom et vide
     if (empty($lastName)) {
         //stocker dans le tableau le rapport d'érreur
-        $formError['your-name'] = 'Champ obligatoire.';
+        $formError['your-name'] = 'Champ NOM obligatoire.';
     }
 }
 if (isset($_POST['your-email'])) {
@@ -30,7 +31,7 @@ if (isset($_POST['your-email'])) {
         $formError['your-email'] = 'Adresse mail incorrect';
     }
     if (empty($mail)) {
-        $formError['your-email'] = 'Champ obligatoire.';
+        $formError['your-email'] = 'Champ MAIL obligatoire.';
     }
 }
 if (isset($_POST['your-tel-615'])) {
@@ -39,7 +40,7 @@ if (isset($_POST['your-tel-615'])) {
         $formError['your-tel-615'] = 'Numéro invalide.';
     }
     if (empty($phone)) {
-        $formError['your-tel-615'] = 'Champ obligatoire.';
+        $formError['your-tel-615'] = 'Champ Numéro de téléphone obligatoire.';
     }
 }
 if (isset($_POST['your-subject'])) {
@@ -48,7 +49,7 @@ if (isset($_POST['your-subject'])) {
         $formError['your-subject'] = 'Saisie invalide.';
     }
     if (empty($subject)) {
-        $formError['your-subject'] = 'Champ obligatoire.';
+        $formError['your-subject'] = 'Champ Sujet obligatoire.';
     }
 }
 if (isset($_POST['your-ville'])) {
@@ -57,7 +58,7 @@ if (isset($_POST['your-ville'])) {
         $formError['your-ville'] = 'veuillez entrer un nom de ville valide';
     }
     if (empty($city)) {
-        $formError['your-ville'] = 'Champ obligatoire.';
+        $formError['your-ville'] = 'Champ Ville obligatoire.';
     }
 }
 if (isset($_POST['your-message'])) {
@@ -66,7 +67,7 @@ if (isset($_POST['your-message'])) {
         $formError['your-message'] = 'Saisie invalide.';
     }
     if (empty($message)) {
-        $formError['your-message'] = 'Champ obligatoire.';
+        $formError['your-message'] = 'Champ Message obligatoire.';
     }
 }
 ?>

@@ -26,16 +26,20 @@
                 </ul>
             </div>
         </nav>
+        <?= $xml->page[$page]->content; ?>
         <!--affiche les resultat si aucune érreur est compté dans le tableau-->
-        <?php if (isset($_POST['submit']) && (count($formError) === 0)) { ?>
-            <p><?= $lastName ?></p>
-            <p><?= $mail ?></p>
-            <p><?= $phone ?></p>
-            <p><?= $subject ?></p>
-            <p><?= $city ?></p>
-            <p><?= $message ?></p>
-        <?php } else { ?>
-            <?= $xml->page[$page]->content; ?>
-        <?php } ?>
+        <?php 
+            if (isset($_POST['send']) && count($formError) == 0) {
+                ?>
+                <p class="text-success"><?= 'Le message a bien été envoyé !' ?></p>
+                <?php
+            } else {
+                foreach ($formError as $error) {
+                    ?>
+                    <p class="text-danger"><?= $error ?></p>
+                    <?php
+                }
+            }
+        ?>
     </body>
 </html>
